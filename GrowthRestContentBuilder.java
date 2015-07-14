@@ -286,7 +286,7 @@ public class GrowthRestContentBuilder {
 
         createHotelAttribute(results, ContentDataConstants.HOTEL_STATUS_CODE, hotelStatusCode, asset, ContentDataConstants.NUMBER_TYP);
 
-        createHotelAttribute(results, ContentDataConstants.CONTRACT_STATUS, contractStatus, asset, ContentDataConstants.NUMBER_TYP);
+        createHotelAttribute(results, ContentDataConstants.CONTRACT_STATUS, contractStatus, asset, ContentDataConstants.TEXT_TYP);
 
         createHotelAttribute(results, ContentDataConstants.CONTRACT_STATUS_CODE, contractStatusCode, asset, ContentDataConstants.TEXT_TYP);
 
@@ -575,7 +575,7 @@ public class GrowthRestContentBuilder {
     private boolean setMultiLanguageAddress(HotelAttribute aa, Map<String, Address> addresses) {
         boolean valueChanged = false;
         for (String locale : addresses.keySet()) {
-            valueChanged = valueChanged || setAddressProperties(aa, addresses.get(locale), locale);
+            valueChanged = setAddressProperties(aa, addresses.get(locale), locale);
         }
         return valueChanged;
     }
